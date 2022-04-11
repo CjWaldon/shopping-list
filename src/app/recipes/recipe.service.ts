@@ -16,9 +16,12 @@ export class RecipeService{
       constructor(private slService: ShoppingListService){};
 
       getRecipes(){
-          return this.recipes.slice(); // slice with no arguments returns copy of array instead of reference to array
+        return this.recipes.slice(); // slice with no arguments returns copy of array instead of reference to array
       }
 
+      getRecipe(index: number){
+        return this.recipes[index];
+      }
       addIngredientsToShoppingList(ingredients: Ingredient[]){
         this.slService.addIngredients(ingredients);
       }
